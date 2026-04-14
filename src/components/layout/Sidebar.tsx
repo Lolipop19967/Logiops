@@ -3,11 +3,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import {
   LayoutDashboard, Building2, Users, Target, Package, FileText,
-  Receipt, Truck, IdCard, Map, Warehouse, Handshake,
+  Receipt, Truck, CreditCard, Map, Warehouse, Handshake,
   ShieldCheck, BarChart3, LogOut, ChevronRight, Database
 } from 'lucide-react'
 import clsx from 'clsx'
-
 const nav = [
   { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
   { section: 'CORE' },
@@ -20,7 +19,7 @@ const nav = [
   { label: 'Invoices', href: '/invoices', icon: Receipt },
   { section: 'FLEET' },
   { label: 'Vehicles', href: '/fleet', icon: Truck },
-  { label: 'Drivers', href: '/drivers', icon: IdCard },
+  { label: 'Drivers', href: '/drivers', icon: CreditCard },
   { section: 'NETWORK' },
   { label: 'Routes & Lanes', href: '/routes', icon: Map },
   { label: 'Warehouses', href: '/warehouses', icon: Warehouse },
@@ -31,11 +30,9 @@ const nav = [
   { section: 'SETUP' },
   { label: 'Seed Database', href: '/seed', icon: Database },
 ]
-
 export function Sidebar() {
   const pathname = usePathname()
   const active = pathname === '/' ? '/dashboard' : pathname
-
   return (
     <aside className="w-56 flex-shrink-0 bg-[#160d2e] border-r border-purple-900/40 flex flex-col h-full overflow-y-auto">
       <div className="px-4 pt-4 pb-2 flex-1">
